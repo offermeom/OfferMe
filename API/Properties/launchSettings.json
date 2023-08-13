@@ -1,7 +1,5 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
-  "resultCoverage" : "dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/ /p:MergeWith='./TestResults/coverage.xml' --logger 'trx;LogFileName=testresults.xml'",
-  "reportGenerator" : "reportgenerator '-reports:TestResults/coverage.opencover.xml' '-targetdir:coverage' '-reporttypes:Html'",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
