@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import ChoiceScreenVue from '@/views/ChoiceScreen.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -19,7 +19,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/ChoiceScreen.vue')
+      component: ChoiceScreenVue
     },
     {
       path: '/loginvendor',
