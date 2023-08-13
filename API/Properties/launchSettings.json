@@ -1,11 +1,13 @@
 ﻿{
   "$schema": "https://json.schemastore.org/launchsettings.json",
+  "resultCoverage" : "dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./TestResults/ /p:MergeWith='./TestResults/coverage.xml' --logger 'trx;LogFileName=testresults.xml'",
+  "reportGenerator" : "reportgenerator '-reports:TestResults/coverage.opencover.xml' '-targetdir:coverage' '-reporttypes:Html'",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:61546",
-      "sslPort": 44357
+      "applicationUrl": "http://localhost:18257",
+      "sslPort": 44385
     }
   },
   "profiles": {
@@ -14,7 +16,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5074",
+      "applicationUrl": "http://localhost:5266",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -24,7 +26,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7118;http://localhost:5074",
+      "applicationUrl": "https://localhost:7000;http://localhost:5266",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
