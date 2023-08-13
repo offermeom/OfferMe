@@ -71,7 +71,7 @@
                 ref="frommenudate"
                 v-model="frommenudate"
                 :close-on-content-click="false"
-                :return-value.sync="fromdate"
+                v-model:return-value="fromdate"
                 transition="scale-transition"
                 offset-y
                 min-width="290px"
@@ -100,7 +100,7 @@
                 ref="tomenudate"
                 v-model="tomenudate"
                 :close-on-content-click="false"
-                :return-value.sync="todate"
+                v-model:return-value="todate"
                 transition="scale-transition"
                 offset-y
                 min-width="290px"
