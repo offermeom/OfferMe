@@ -21,8 +21,8 @@ public class UserController : ControllerBase
         try
         {
             _logger.LogInformation("UserController : SignIn Action");
-            _IUserService.Get(Number, Password);
-            return StatusCode(StatusCodes.Status202Accepted);
+            var user = _IUserService.Get(Number, Password);
+            return Ok(user);
         }
         catch(Exception e)
         {
