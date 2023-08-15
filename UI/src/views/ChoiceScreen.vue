@@ -7,7 +7,8 @@
           color="primary"
           class="d-block mx-auto my-auto white--text"
           width="150px"
-          @click="goToVendorLogin()"
+          to="loginvendor"
+          router
         >
           Vendor
         </v-btn>
@@ -24,7 +25,8 @@
           outlined
           class="d-block mx-auto my-auto"
           width="150px"
-          @click="goToCustomerLogin()"
+          to="logincustomer"
+          router
         >
           Customer
         </v-btn>
@@ -33,21 +35,7 @@
   </v-container>
 </template>
 
-<script lang="ts">
-export default {
-  methods: {
-    goToVendorLogin() {
-      this.$router.push('/loginvendor')
-    },
-    goToCustomerLogin() {
-      this.$router.push('/logincustomer')
-    }
-  }
-}
-</script>
-
-<style>
-#app {
-  padding: 0px !important;
-}
+<style lang="stylus">
+  #app
+    padding 0px !important
 </style>
