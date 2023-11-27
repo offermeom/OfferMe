@@ -1,25 +1,14 @@
 ﻿using API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-
 namespace API.Data;
 public partial class OMContext : DbContext
 {
-    private readonly ILoggerFactory? _loggerFactory;
-    public OMContext()
-    {
-    }
+    public OMContext() {}
     [ActivatorUtilitiesConstructor]
-    public OMContext(DbContextOptions<OMContext> options, ILoggerFactory loggerFactory)
-        : base(options)
-    {
-        _loggerFactory = loggerFactory;
-    }
+    public OMContext(DbContextOptions<OMContext> options) : base(options) {}
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseLoggerFactory(_loggerFactory);
-        optionsBuilder.EnableSensitiveDataLogging();
         base.OnConfiguring(optionsBuilder);
     }
     public virtual DbSet<User>? Users { get; set; }

@@ -14,14 +14,6 @@
               v-model="username"
             ></v-text-field>
             <v-text-field
-              prepend-icon="mdi-note-text"
-              :rules="[requiredRule]"
-              name="gstin"
-              label="GSTIN"
-              type="text"
-              v-model="gstin"
-            ></v-text-field>
-            <v-text-field
               id="password"
               prepend-icon="mdi-lock"
               :rules="[requiredRule]"
@@ -33,7 +25,8 @@
             <v-btn
               color="primary"
               class="white--text d-block mx-auto my-auto"
-              @click="loginVendorHome()"
+              to="vendorhomescreen"
+              router
             >
               Login
             </v-btn>
@@ -45,7 +38,8 @@
         color="primary"
         outlined
         class="d-block mx-auto my-auto mt-12"
-        @click="registerVendor()"
+        to="registervendor"
+        router
       >
         Register as Vendor
       </v-btn>
@@ -53,39 +47,22 @@
   </v-app>
 </template>
 
-<style>
-#app {
-  padding: 0px !important;
-}
-
-.container {
-  padding: 10px 20px !important;
-}
-</style>
-
 <script lang="ts">
-export default {
+export default { 
   data() {
     return {
       username: '',
       password: '',
       gstin: '',
-      requiredRule: [(v) => !!v || 'This field is required']
-    }
-  },
-  methods: {
-    loginVendorHome() {
-      this.$router.push('/vendorhomescreen')
-    },
-    registerVendor() {
-      this.$router.push('/registervendor')
+      requiredRule: [(v: String) : Boolean | String => !!v || 'This field is required']
     }
   }
 }
 </script>
 
-<style>
-#app {
-  padding: 0px;
-}
+<style lang="stylus">
+#app
+  padding 0px !important
+.container
+  padding 10px 20px !important
 </style>
