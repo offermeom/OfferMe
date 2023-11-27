@@ -19,7 +19,7 @@ public class UserService : IUserService
         try
         {
             _logger.LogInformation("UserService : Get Action");
-            List<User>? _user = _OMContext?.Users?.Where(u => u.Number == user.Number || u.Name == user.Name || u.Mail == user.Mail || u.GSTIN == user.GSTIN).ToList();
+            List<User>? _user = _OMContext.Users!.Where(u => u.Number == user.Number || u.Name == user.Name || u.Mail == user.Mail || u.GSTIN == user.GSTIN).ToList();
             return _user ?? new List<User>();
         }
         catch(Exception e)
@@ -33,7 +33,7 @@ public class UserService : IUserService
         try
         {
             _logger.LogInformation("UserService : Get Action");
-            var user = _OMContext.Users?.SingleOrDefault(u => u.Number == Number && u.Password == Password);
+            var user = _OMContext.Users!.SingleOrDefault(u => u.Number == Number && u.Password == Password);
             return user ?? throw new InvalidUserException("Invalid User");
         }
         catch(Exception e)
