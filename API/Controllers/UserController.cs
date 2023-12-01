@@ -22,7 +22,7 @@ public class UserController : ControllerBase
         {
             _logger.LogInformation("UserController : SignIn Action");
             var user = _IUserService.Get(Number, Password);
-            return Ok(user);
+            return Accepted(user);
         }
         catch(Exception e)
         {
