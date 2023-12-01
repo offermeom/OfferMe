@@ -48,13 +48,13 @@
 </template>
 
 <script lang="ts">
-export default { 
+export default {
   data() {
     return {
       username: '',
       password: '',
       gstin: '',
-      requiredRule: [(v: String) : Boolean | String => !!v || 'This field is required']
+      requiredRule: [(v: String): Boolean | String => !!v || 'This field is required']
     }
   }
 }
