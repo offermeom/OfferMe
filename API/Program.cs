@@ -6,21 +6,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddLogging(options => {
-    options.AddConsole();
-    options.SetMinimumLevel(LogLevel.Debug);
-    options.AddDebug();
-}); // ** Configure Logging Service
-builder.Services.AddCors(options => options.AddDefaultPolicy(config => config.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod()));
-builder.Services.AddDbContext<OMContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-    options.UseLoggerFactory(LoggerFactory.Create(config => {
-        config.AddConsole();
-        config.AddDebug();
-    }));
-});// ** Configure OMContext with SQL Server and logging
+builder.Services.AddCors(options => options.AddDefaultPolicy(config => config.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod())); // ** Configure CORS Policy
+builder.Services.AddDbContext<OMContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));// ** Configure OMContext with SQL Server
 // Add services to the container.
 builder.Services.AddScoped<IUserService, UserService>(); // ** Register UserService Implementation
 builder.Services.AddControllers();
@@ -29,8 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-    app.UseSwagger().UseSwaggerUI();
+if (app.Environment.IsDevelopment()) app.UseSwagger().UseSwaggerUI();
 app.UseCors();
 app.UseHttpsRedirection();
 app.UseAuthorization();

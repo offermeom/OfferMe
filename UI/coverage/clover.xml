@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1692080824109" clover="3.2.0">
-  <project timestamp="1692080824110" name="All files">
-    <metrics statements="94" coveredstatements="90" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0" elements="96" coveredelements="90" complexity="0" loc="94" ncloc="94" packages="2" files="2" classes="2"/>
+<coverage generated="1701401043768" clover="3.2.0">
+  <project timestamp="1701401043769" name="All files">
+    <metrics statements="82" coveredstatements="82" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="82" coveredelements="82" complexity="0" loc="82" ncloc="82" packages="2" files="2" classes="2"/>
     <package name="components">
       <metrics statements="41" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="HelloWorld.vue" path="C:\Users\nprasads\Documents\Git\OfferMe\UI\src\components\HelloWorld.vue">
@@ -50,9 +50,9 @@
       </file>
     </package>
     <package name="views">
-      <metrics statements="53" coveredstatements="49" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="41" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="ChoiceScreen.vue" path="C:\Users\nprasads\Documents\Git\OfferMe\UI\src\views\ChoiceScreen.vue">
-        <metrics statements="53" coveredstatements="49" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="41" coveredstatements="41" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -92,20 +92,8 @@
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="48" count="1" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
       </file>
     </package>
   </project>

@@ -36,6 +36,6 @@
 </template>
 
 <style lang="stylus">
-  #app
-    padding 0px !important
+#app
+  padding 0px !important
 </style>
