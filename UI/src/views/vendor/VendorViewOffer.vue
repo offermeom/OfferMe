@@ -1,8 +1,12 @@
 <template>
   <v-app>
     <v-toolbar color="primary" elevation="2" dark class="toolbar-custom">
-      <v-btn icon class="d-flex" @click="GoToHome()"><v-icon>mdi-chevron-left</v-icon></v-btn>
-      <span class="white--text d-flex align-center mt-1"> View Product Offer </span>
+      <v-btn icon class="d-flex" @click="GoToHome()"
+        ><v-icon>mdi-chevron-left</v-icon></v-btn
+      >
+      <span class="white--text d-flex align-center mt-1">
+        View Product Offer
+      </span>
     </v-toolbar>
     <div v-for="(productView, index) in productsView" :key="index">
       <div class="d-flex justify-center mt-10">
@@ -13,7 +17,11 @@
         max-width="150"
         src="https://picsum.photos/id/11/500/300"
         ></v-img> -->
-          <img :src="productView.image" :alt="productView.name" style="width: 150px" />
+          <img
+            :src="productView.image"
+            :alt="productView.name"
+            style="width: 150px"
+          />
         </v-card>
       </div>
 
@@ -56,9 +64,13 @@
       </v-container>
     </div>
     <div class="mb-1 d-flex justify-space-around">
-      <v-btn depressed color="primary" class="white--text" width="150px"> Edit </v-btn>
+      <v-btn depressed color="primary" class="white--text" width="150px">
+        Edit
+      </v-btn>
 
-      <v-btn depressed outlined color="error" class="" width="150px"> Delete </v-btn>
+      <v-btn depressed outlined color="error" class="" width="150px">
+        Delete
+      </v-btn>
     </div>
 
     <v-bottom-navigation app class="d-flex justify-space-around">
@@ -78,53 +90,53 @@
   </v-app>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   data() {
     return {
       productsView: [
         {
           id: 1,
-          name: 'Nike Shoes',
-          image: 'https://picsum.photos/id/11/500/300',
-          mrp: '500/-',
-          sellingprice: '200/-',
-          offerprice: '150/-',
-          producttype: 'shoe',
-          gst: 'asdf',
-          fromdate: '12-12-23',
-          todate: '13-01-24'
-        }
-      ]
-    }
+          name: "Nike Shoes",
+          image: "https://picsum.photos/id/11/500/300",
+          mrp: "500/-",
+          sellingprice: "200/-",
+          offerprice: "150/-",
+          producttype: "shoe",
+          gst: "asdf",
+          fromdate: "12-12-23",
+          todate: "13-01-24",
+        },
+      ],
+    };
   },
 
   methods: {
     navigateToHome() {
-      this.$router.push('/vendorhomescreen')
+      this.$router.push("/vendorhomescreen");
     },
     navigateToHistory() {
-      this.$router.push('/registervendor')
+      this.$router.push("/registervendor");
     },
     navigateToProfile() {
-      this.$router.push('/registervendor')
+      this.$router.push("/registervendor");
     },
     GoToHome() {
-      this.$router.push('/vendorhomescreen')
-    }
-  }
-}
+      this.$router.push("/vendorhomescreen");
+    },
+  },
+};
 
 $(document).ready(function () {
   if (window.File && window.FileList && window.FileReader) {
-    $('#files').on('change', function (e) {
+    $("#files").on("change", function (e) {
       var files = e.target.files,
-        filesLength = files.length
+        filesLength = files.length;
       for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader()
+        var f = files[i];
+        var fileReader = new FileReader();
         fileReader.onload = function (e) {
-          var file = e.target
+          var file = e.target;
           $(
             '<span class="pip">' +
               '<img class="imageThumb" src="' +
@@ -133,11 +145,11 @@ $(document).ready(function () {
               file.name +
               '"/>' +
               '<br/><span class="remove">Remove image</span>' +
-              '</span>'
-          ).insertAfter('#files')
-          $('.remove').click(function () {
-            $(this).parent('.pip').remove()
-          })
+              "</span>"
+          ).insertAfter("#files");
+          $(".remove").click(function () {
+            $(this).parent(".pip").remove();
+          });
 
           // Old code here
           /*$("<img></img>", {
@@ -145,15 +157,15 @@ $(document).ready(function () {
             src: e.target.result,
             title: file.name + " | Click to remove"
           }).insertAfter("#files").click(function(){$(this).remove();});*/
-        }
-        fileReader.readAsDataURL(f)
+        };
+        fileReader.readAsDataURL(f);
       }
-      console.log(files)
-    })
+      console.log(files);
+    });
   } else {
-    alert("Your browser doesn't support to File API")
+    alert("Your browser doesn't support to File API");
   }
-})
+});
 </script>
 
 <style>
@@ -249,7 +261,7 @@ $(document).ready(function () {
   border-radius: 3px;
 }
 
-input[type='file'] {
+input[type="file"] {
   display: block;
 }
 .imageThumb {
